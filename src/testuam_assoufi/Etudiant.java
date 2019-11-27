@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author Ibtissam
  */
-public class Etudiant implements Comparable<Etudiant> {
+public class Etudiant {
 
     private String nom, prenom, email;
     private Date dateDeNaissance;
@@ -70,13 +70,7 @@ public class Etudiant implements Comparable<Etudiant> {
 
     @Override
     public String toString() {
-        return "{\n\t nom : " + nom + ",\n\t prenom : " + prenom + ",\n\t email : " + email + ",\n\t dateDeNaissance : " + dateDeNaissance + ",\n\t civilite : " + civilite + "\n}";
-    }
-
-//compare les dates de naissance des etudiants
-    @Override
-    public int compareTo(Etudiant etudiant) {
-        return etudiant.getDateDeNaissance().compareTo(this.getDateDeNaissance());
+        return "\n\t nom : " + nom + ",\n\t prenom : " + prenom + ",\n\t email : " + email + ",\n\t dateDeNaissance : " + dateDeNaissance + ",\n\t civilite : " + civilite + "\n";
     }
 
 }

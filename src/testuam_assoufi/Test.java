@@ -45,8 +45,9 @@ public class Test {
 
     //pour afficher la liste des etudiants
     void afficherListEtudiants() {
+        int i = 1;
         for (Etudiant etudiant : listEtudiants) {
-            System.out.println(etudiant);
+            System.out.println("Etudiant " + i + ":" + etudiant);
         }
     }
 
@@ -55,6 +56,7 @@ public class Test {
         for (Etudiant etudiant : listEtudiants) {
             if (etudiant.getNom().equals(nom)) {
                 listEtudiants.remove(etudiant);
+                System.out.println("etudiant supprimé");
                 break;
             }
 
@@ -62,20 +64,14 @@ public class Test {
     }
 
     //tri croissant des noms des etudiants
-    void triDeNoms() {
-        Collections.sort(listEtudiants, new Comparator<Etudiant>() {
-            @Override
-            public int compare(Etudiant e1, Etudiant e2) {
-                return e1.getNom().compareTo(e2.getNom());
-            }
-        });
+    void triParNoms() {
+        listEtudiants.sort(Comparator.comparing(Etudiant::getNom));
 
     }
 
     //tri decroissant des noms des etudiants
-    //compareTo est une methode de la classe Etudiant
-    void triDeDateDeNaissance() {
-        Collections.sort(listEtudiants, Etudiant::compareTo);
+    void triParDateDeNaissance() {
+        listEtudiants.sort(Comparator.comparing(Etudiant::getDateDeNaissance).reversed());
 
     }
 

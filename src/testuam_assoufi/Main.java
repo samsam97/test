@@ -7,17 +7,7 @@ package testuam_assoufi;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import static java.util.Collections.list;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import static testuam_assoufi.Test.listEtudiants;
+import java.util.*;
 
 /**
  *
@@ -44,6 +34,7 @@ public class Main {
                     + "4 pour trier la liste des étudiants par nom ascendant\n"
                     + "5 pour trier la liste des étudiants par date de naissance descendant\n"
                     + "autre chiffre pour sortir du programme\n");
+            System.out.print("choix=");
             choix = scanner.nextInt();
             switch (choix) {
                 case 1:
@@ -59,10 +50,10 @@ public class Main {
                     test.supprimerEtudiant(nom);
                     break;
                 case 4:
-                    test.triDeNoms();
+                    test.triParNoms();
                     break;
                 case 5:
-                    test.triDeDateDeNaissance();
+                    test.triParDateDeNaissance();
                     break;
                 default:
                     break;
